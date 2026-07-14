@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- NECESARIO PARA MÓVIL -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>App Simulada</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="phone">
+
+  <div class="app">
+
+    <div id="loader">
+     <img src="interfaz/logo.png" class="logo-loader">
+    </div>
+
+    <div class="Inferior1"></div>
+    <div class="Inferior2"></div>
+    <div class="Inferior3"></div>
+
+    <img src="interfaz/banner_principal.png" class="decoracion decor1">
+    <img src="interfaz/banner_sup.png" class="decoracion decor2">
+
+    <!-- BOTÓN IZQUIERDO -->
+    <button id="leftBtn" class="btn circular left"></button>
+
+    <!-- BOTÓN DERECHO -->
+    <button id="rightBtn" class="btn circular right"></button>
+
+
+    <!-- BOTÓN ESCUCHAR -->
+    <label class="square-toggle">
+     <input type="checkbox" id="escucharBtn">
+     <span class="square rojo">ESCUCHAR</span>
+    </label>
+
+    <!-- BOTÓN MAMIFEROS -->
+    <label class="square-toggle">
+     <input type="checkbox" id="btn_mamiferos">
+     <span class="verde">
+      <img src="interfaz/viscacha_v1.png" alt="">
+     </span> 
+    </label>
+
+    <!-- BOTÓN AVES -->
+    <label class="square-toggle">
+     <input type="checkbox" id="btn_aves">
+     <span class="azul">
+      <img src="interfaz/colibri_v1.png" alt="">
+     </span> 
+    </label>
+
+    <!-- BOTÓN INSECTOS -->
+    <label class="square-toggle">
+     <input type="checkbox" id="btn_insectos">
+     <span class="amarillo">
+      <img src="interfaz/mariposa_v1.png" alt="">
+     </span> 
+    </label>
+
+    <!-- IMAGEN CENTRAL -->
+    <div class="contenedor-imagen">
+     <img id="imgA" class="img-layer activa" src="imagenes/colibri_cometa_v1.png">
+     <img id="imgB" class="img-layer">
+    </div>
+
+    <!-- AUDIO -->
+    <audio id="audioAve"></audio>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,404 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FONDO GENERAL */
+body {
+  background: #e5e7e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* 📱 SIMULADOR DE CELULAR */
+.phone {
+  width: 360px;
+  height: 750px;
+  background: #e5e7e4;
+
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+
+  overflow: hidden;
+  position: relative;
+}
+
+/* CONTENIDO INTERNO */
+.app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.app {
+  position: relative; /* IMPORTANTE para posicionar hijos */
+  width: 100%;
+  height: 100%;
+}
+
+
+/* PANTALLA DE CARGA */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background: #83a17f;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 99999;
+
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+/* LOGO */
+.logo-loader {
+  width: 120px;
+  animation: logoAnim 1.5s ease-in-out infinite;
+}
+
+/* ANIMACIÓN SUAVE */
+@keyframes logoAnim {
+  0%   { transform: scale(1); opacity: 0.7; }
+  50%  { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
+/* OCULTAR LOADER */
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+/* FIGURAS ESTÉTICAS */
+.Inferior1,
+.Inferior2,
+.Inferior3 {
+  position: absolute;
+  width: 360px;
+  height: 20px;
+  background: red;
+  z-index: 10; 
+}
+
+/* POSICIONES */
+.Inferior1 {
+  bottom: 20px;
+  left: 0%;
+  background: #a9c396;
+}
+
+.Inferior2 {
+  bottom: 40px;
+  left: 0%;
+  background: #83a17f;
+}
+
+.Inferior3 {
+  bottom: 0px;
+  left: 0%;
+  background: #af713a;
+}
+
+.decoracion {
+  position: absolute;
+  object-fit: contain;
+
+  z-index: 1; /* encima de botones */
+  pointer-events: none; /* no bloquea clics */
+}
+
+/* POSICIONES */
+.decor1 {
+  top: 90px;
+  left: 0%;
+  width: 360px;
+  height: 115px;
+}
+
+.decor2 {
+  top: -5px;
+  left: 0%;
+  width: 360px;
+  height: 80px;
+}
+
+/* ------------------ */
+/* BOTONES */
+/* ------------------ */
+.btn {
+  position: absolute;
+  border: none;
+  background: #83a17f;
+  box-shadow: 0 6px 0 #759272;
+  transition: all 0.1s ease;
+}
+
+/* EFECTO PRESIÓN */
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 0 #83a17f;
+}
+
+/* BOTONES CIRCULARES */
+.circular {
+  position: absolute; /* 🔥 necesario */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: #83a17f;
+  border: none;
+  cursor: pointer;
+
+  z-index: 10;
+}
+
+/* POSICIÓN */
+.left {
+  left: 20px;
+}
+
+.right {
+  right: 20px;
+}
+
+/* 🔺 TRIÁNGULO IZQUIERDO */
+.left::before {
+  content: "";
+  position: absolute;
+
+  width: 2px;
+  height: 2px;
+
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 12px solid #fad8a1;
+
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5));
+}
+
+/* 🔺 TRIÁNGULO DERECHO */
+.right::before {
+  content: "";
+  position: absolute;
+
+  width: 2px;
+  height: 2px;
+
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid #fad8a1;
+
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5));
+}
+
+/* BOTÓN CUADRADO */
+
+.square-toggle input {
+  display: none;
+}
+
+/* botón normal */
+.rojo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+
+  width: 140px;
+  height: 35px;
+  border-radius: 12px;
+
+  background: #a9c396;
+  box-shadow: 0 6px 0 #759272;
+
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 200px;
+
+  transition: all 0.15s ease;
+
+  z-index: 10;
+}
+
+/* estado PRESIONADO (cuando está activado) */
+.square-toggle input:checked + .rojo {
+  transform: translateX(-50%) translateY(4px);
+  box-shadow: 0 2px 0 #a9c396;
+  background: #a9c396;
+}
+
+/* botón mamiferos */
+.square-toggle input {
+  display: none;
+}
+.verde {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 120px;
+  height: 80px;
+
+  background: #ced1ce;
+  box-shadow: 0 -6px 0 #a8a8a8;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 60px;
+
+  cursor: pointer;
+  overflow: hidden;
+}
+.verde img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+.square-toggle input:checked + .verde {
+  transform: translateX(-50%) translateY(4px);
+  box-shadow: 0 2px 0 #ffffff;
+  background: #ffffff;
+}
+
+/* botón ave */
+.square-toggle input {
+  display: none;
+}
+.azul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 120px;
+  height: 80px;
+
+  background: #ced1ce;
+  box-shadow: 0 -6px 0 #a8a8a8;
+
+  position: absolute;
+  left: 16.4%;
+  transform: translateX(-50%);
+  bottom: 60px;
+
+  cursor: pointer;
+  overflow: hidden;
+}
+.azul img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+.square-toggle input:checked + .azul {
+  transform: translateX(-50%) translateY(4px);
+  box-shadow: 0 2px 0 #ffffff;
+  background: #ffffff;
+}
+
+/* botón insectos */
+.square-toggle input {
+  display: none;
+}
+.amarillo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 120px;
+  height: 80px;
+
+  background: #ced1ce;
+  box-shadow: 0 -6px 0 #a8a8a8;
+
+  position: absolute;
+  left: 83.6%;
+  transform: translateX(-50%);
+  bottom: 60px;
+
+  cursor: pointer;
+  overflow: hidden;
+}
+.amarillo img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+.square-toggle input:checked + .amarillo {
+  transform: translateX(-50%) translateY(4px);
+  box-shadow: 0 2px 0 #ffffff;
+  background: #ffffff;
+}
+
+
+.contenedor-imagen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 360px;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* capas */
+.img-layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 100%;
+
+  transform: translate(-50%, -50%);
+
+  opacity: 0;
+  transition: opacity 0.6s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* imagen */
+.img-layer img {
+  width: 100%;
+  height: auto; /* 🔥 NO se estira */
+  object-fit: contain; /* 🔥 mantiene proporción */
+}
+
+/* visible */
+.img-layer.activa {
+  opacity: 1;
+}
