@@ -73,6 +73,36 @@ const aves = [
     img1: "imagenes/colibri_rutilante_v1.png",
     img2: "imagenes/colibri_rutilante_v2.png",
     audio: "audios/colibri_rutilante.mp3"
+  },
+  {
+    nombre: "calandria_castana",
+    img1: "imagenes/calandria_castana_v1.png",
+    img2: "imagenes/calandria_castana_v2.png",
+    audio: "audios/calandria_castana.mp3"
+  },
+  {
+    nombre: "corta_ramas",
+    img1: "imagenes/corta_ramas_v1.png",
+    img2: "imagenes/corta_ramas_v2.png",
+    audio: "audios/corta_ramas.mp3"
+  },
+  {
+    nombre: "killi_killi",
+    img1: "imagenes/killi_killi_v1.png",
+    img2: "imagenes/killi_killi_v2.png",
+    audio: "audios/killi_killi.mp3"
+  },
+  {
+    nombre: "pincha_flor_vientre_gris",
+    img1: "imagenes/pincha_flor_vientre_gris_v1.png",
+    img2: "imagenes/pincha_flor_vientre_gris_v2.png",
+    audio: "audios/pincha_flor_vientre_gris.mp3"
+  },
+  {
+    nombre: "torito_copeton",
+    img1: "imagenes/torito_copeton_v1.png",
+    img2: "imagenes/torito_copeton_v2.png",
+    audio: "audios/torito_copeton.mp3"
   }
 ];
 
