@@ -106,6 +106,56 @@ const aves = [
   }
 ];
 
+document.addEventListener("DOMContentLoaded", function () {
+
+  let currentIndex = 0;
+
+  const contador = document.getElementById("contador-aves");
+  const leftBtn = document.getElementById("leftBtn");
+  const rightBtn = document.getElementById("rightBtn");
+
+  function formatearNumero(num) {
+    return num < 10 ? "0" + num : num;
+  }
+
+  function actualizarContador() {
+    const actual = formatearNumero(currentIndex + 1);
+    const total = formatearNumero(aves.length);
+
+    contador.textContent = `${actual}/${total}`;
+  }
+
+  // 👉 BOTÓN DERECHO (SIGUIENTE)
+  rightBtn.addEventListener("click", function () {
+    currentIndex++;
+
+    if (currentIndex >= aves.length) {
+      currentIndex = 0;
+    }
+
+    // 🔥 aquí va tu lógica de cambiar imagen/audio
+
+    actualizarContador();
+  });
+
+  // 👉 BOTÓN IZQUIERDO (ANTERIOR)
+  leftBtn.addEventListener("click", function () {
+    currentIndex--;
+
+    if (currentIndex < 0) {
+      currentIndex = aves.length - 1;
+    }
+
+    // 🔥 tu lógica de cambio
+
+    actualizarContador();
+  });
+
+  // Inicializar contador
+  actualizarContador();
+
+});
+
 // ===== ESTADO =====
 let indiceActual = 0;
 let mostrandoA = true;

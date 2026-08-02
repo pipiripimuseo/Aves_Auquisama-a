@@ -300,19 +300,21 @@ body {
   align-items: center;
   justify-content: center;
 
-  width: 120px;
+  width: 620px;
   height: 80px;
 
   background: #ced1ce;
   box-shadow: 0 -6px 0 #a8a8a8;
 
   position: absolute;
-  left: 16.4%;
+  left: 40%;
   transform: translateX(-50%);
   bottom: 60px;
 
   cursor: pointer;
   overflow: hidden;
+
+  z-index: 5;
 }
 .azul img {
   width: 60px;
@@ -401,4 +403,16 @@ body {
 /* visible */
 .img-layer.activa {
   opacity: 1;
+}
+
+#contador-aves {
+  position: absolute; /* o fixed si quieres que no se mueva */
+  top: 638px;
+  left: 165px;
+
+  color: #898989;
+  font-size: 30px;
+  font-weight: bold;
+
+  z-index: 999; /* 🔥 SIEMPRE ENCIMA */
 }
